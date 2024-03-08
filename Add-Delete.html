@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add & Delete</title>
+</head>
+
+<body>
+
+    <h2>Add & Delete</h2><br>
+
+    <input id="inserted">
+    <button onclick="add()">Add</button>
+    <ul id="list">
+        <li style="margin-top: 10px;">first
+            <button onclick="delete1(event)" style="margin-top: 5px;;">Delete</button>
+        </li>
+    </ul>
+
+</body>
+
+</html>
+<style>
+    h2 {
+        color: rgb(0, 0, 0);
+        margin-left: 37%;
+        margin-top: 50px;
+    }
+
+    #inserted {
+        border-radius: 10px;
+        margin-left: 35%;
+    }
+
+    #list {
+        margin-left: 35%;
+        margin-top: 10px;
+    }
+</style>
+<script>
+    var list = document.getElementById("list")
+    var input = document.getElementById("inserted")
+    function add() {
+        var createdelement = document.createElement("li")
+        createdelement.innerHTML = input.value + "<button onclick='delete1(event)'>delete</button>"
+        list.append(createdelement)
+    }
+    function delete1(event) {
+        event.target.parentElement.remove()
+    }
+</script>
